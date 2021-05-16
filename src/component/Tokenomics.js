@@ -33,7 +33,7 @@ class Tokenomics extends Component {
         const { isCopied } = this.state
         const { isDonate } = this.props
         return (
-            <section class="nose" id="donate">
+            <section class="nose" id="wallet-donation">
                 {!isDonate ? <div class="left center-flex">
                     <div class="circle">
                         <img src="/img/Tokenomics.png" width={250} alt="tokenomics" />

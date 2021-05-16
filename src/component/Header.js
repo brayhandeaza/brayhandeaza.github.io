@@ -5,6 +5,7 @@ class Header extends Component {
         super(props)
         this.state = {}
     }
+
     render() {
         return (
             <header class="header" style={{ position: this.props.position ? "relative" : "fixed" }}>
@@ -29,7 +30,7 @@ class Header extends Component {
                             role="button">Smart Contract</a>
                     </li>
                 </ul>
-                {!this.props.position ? <a href="/donate" id="donate" class="btn btn--header">Donate</a> : null}
+                {!this.props.position ? <a href="#wallet-donation" class="btn btn--header">Donate</a> : null}
                 <button class="header__menu" type="button">
                     <i class="ti-menu"></i>
                     <i class="ti-close"></i>
@@ -38,5 +39,4 @@ class Header extends Component {
         )
     }
 }
-
 export default Header
