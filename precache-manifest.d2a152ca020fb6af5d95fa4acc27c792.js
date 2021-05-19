@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "4872a7bd7e403ca5d97f",
-    "url": "/static/css/main.05b74f75.chunk.css"
+    "revision": "f5efef83ed10a01cc7a0",
+    "url": "/static/css/main.54abfd57.chunk.css"
   },
   {
-    "revision": "4872a7bd7e403ca5d97f",
+    "revision": "f5efef83ed10a01cc7a0",
     "url": "/static/js/main.620abb83.chunk.js"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/static/media/tick-mark.4ea88ac4.svg"
   },
   {
-    "revision": "1e54ebd9bede2fdf23f11454244cf887",
+    "revision": "24f531f855a61d90d78e1e1fbcf99888",
     "url": "/index.html"
   }
 ];
