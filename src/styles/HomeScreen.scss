@@ -1,0 +1,16 @@
+.HomeScreen {
+    main {
+        margin-top: 200px;
+    }
+}
+
+
+
+@media screen and (width < 600px) {
+    .HomeScreen {
+        main {
+            margin-top: 60px;
+        }
+    }
+    
+}
