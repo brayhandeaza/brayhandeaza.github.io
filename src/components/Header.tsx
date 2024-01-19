@@ -109,9 +109,9 @@ const Header = () => {
 
 
             </div>
-            < div className="right menu-full">
+            < div className="right menu-full" style={{background: "transparent"}}>
                 <Menu
-                    style={{ width: "100%" }}
+                    style={{ width: "100%", background: "transparent" }}
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
                     mode={"horizontal"}

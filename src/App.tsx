@@ -7,14 +7,14 @@ const App: React.FC = () => {
 	return (
 		<div className='App'>
 			<Header />
-			<Routes>
-				<Route path="/" element={<HomeScreen />} />
-				<Route path="/portfolio" element={<PortfolioScreen />} />
-				<Route path="/portfolio/:projectId" element={<ProjectDetailsScreen />} />
-				{/* <Route path="/about" element={<PDF />} /> */}
-				<Route path="/skills" element={<h1>Skills</h1>} />
-				<Route path="/contact" element={<ContactScreen />} />
-			</Routes>
+				<Routes>
+					<Route path="/" element={<HomeScreen />} />
+					<Route path="/portfolio" element={<PortfolioScreen />} />
+					<Route path="/portfolio/:projectId" element={<ProjectDetailsScreen />} />
+					{/* <Route path="/about" element={<PDF />} /> */}
+					<Route path="/skills" element={<h1>Skills</h1>} />
+					<Route path="/contact" element={<ContactScreen />} />
+				</Routes>
 		</div>
 	)
 }
