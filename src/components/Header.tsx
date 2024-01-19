@@ -6,7 +6,7 @@ import { Button, Menu } from 'antd';
 import { useEffect, useState } from "react";
 import { MdWorkOutline } from "react-icons/md"
 import { FaOsi } from "react-icons/fa"
-import { FiMail, FiDownload,  } from "react-icons/fi"
+import { FiDownload, } from "react-icons/fi"
 import { Link, useLocation } from "react-router-dom";
 import { PDF, Modal } from "@components";
 
@@ -128,7 +128,7 @@ const Header = () => {
                         <FiDownload style={{ color: "white", fontSize: "20px" }} />
                         <b className="ms-2" style={{ color: "white" }}>My Resume</b>
                     </Button>
-                    <Modal onClose={(open: boolean) => setIsModalOpen(open)} open={isModalOpen} >
+                    <Modal  onClose={(open: boolean) => setIsModalOpen(open)} open={isModalOpen} >
                         <PDF />
                     </Modal>
                 </div>

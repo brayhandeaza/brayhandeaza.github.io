@@ -43,7 +43,7 @@ export default ({ }: Props = {}): JSX.Element => {
     }, [])
 
     return (
-        <div className="Example" style={{ position: 'relative', top: -100 }}>
+        <div className="Example" style={{ position: 'relative', top: -130 }}>
             <div className="Example__container" >
                 <div className="Example__container__document" >
                     <Document file={resume} onLoadSuccess={onLoadSuccess}>

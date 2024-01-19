@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Modal as AntdModal } from 'antd';
-import { MdDownloadForOffline } from "react-icons/md"
 import { resume } from '@assets';
 import { FiDownload } from "react-icons/fi"
 
@@ -42,17 +41,14 @@ const Modal: React.FC<Props> = ({ children, open = true, onClose = () => { } }: 
 
 
     return (
-        <div>
-
-            <AntdModal className='modal-pdf' onCancel={onFinishClosing} title={null} closeIcon={null} footer={null} open={visible}>
-                <div className='download-button' style={{ height: 60 }}>
-                    <div onClick={() => handleDownload()} className="download-button-icon">
-                        <FiDownload style={{ color: "#ef0454" }} size={20} />
-                    </div>
+        <AntdModal style={{ backgroundColor: "transparent" }} className='modal-pdf' onCancel={onFinishClosing} title={null} closeIcon={null} footer={null} open={visible}>
+            <div className='download-button' style={{ height: 60, paddingRight: 20 }}>
+                <div onClick={() => handleDownload()} className="download-button-icon">
+                    <FiDownload style={{ color: "#ef0454" }} size={20} />
                 </div>
-                {children}
-            </AntdModal>
-        </div>
+            </div>
+            {children}
+        </AntdModal>
     );
 };
 
