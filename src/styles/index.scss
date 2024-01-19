@@ -1,3 +1,5 @@
+@import "colors";
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -14,8 +16,9 @@
 
 body {
 	width: 100vw;
-	// height: 100vh;
+	height: 100vh;
 	padding: 20px 5%;
+	background: $primaryDark !important;
 }
 
 
@@ -72,4 +75,14 @@ body {
     background-color: transparent !important;
 	padding: 0 !important;
 	padding-top: 25px !important;
+}
+
+
+:where(h1, h2, h3, h4, h5, h6, span, a, p, b) {
+	color: $primaryText !important;
+}
+
+
+:where(svg) {
+	fill: $primaryText;
 }

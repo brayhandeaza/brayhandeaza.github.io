@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { Button } from "antd"
 import { Modal, PDF } from "@components"
 import { useState } from "react"
+import { HomeIllustration } from "@assets"
 
 const HomeScreen: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -56,17 +57,17 @@ const HomeScreen: React.FC = () => {
                                         <span style={{ fontWeight: "600" }}>Follow</span>
                                     </div>
                                     <div className="container ps-0 ms-0">
-                                        <div className="row">
-                                            <div className="col-12">
+                                        <div className="row d-flex">
+                                            <div className="col-8">
                                                 <div className="bd-slider-five z-index">
                                                     <div className="bd-slider-five-hello mb-10 wow fadeInUp" data-wow-delay=".2s">
                                                         <span>Hi There,</span>
                                                     </div>
                                                     <h1 className="bd-slider-five-title wow fadeInUp" data-wow-delay=".4s">I'm Brayhan</h1>
                                                     <h2 className="bd-slider-five-subtitle mb-30 wow fadeInUp" data-wow-delay=".6s">
-                                                        a Software <span>Engineer.</span>
+                                                        a Software <span className="text-color-red">Engineer.</span>
                                                     </h2>
-                                                    <p className="mb-30 wow fadeInUp" data-wow-delay=".8s">
+                                                    <p className="mb-30 wow fadeInUp textGray" data-wow-delay=".8s">
                                                         I'm a Software Engineer with  <b>5+ years experience </b>  who loves to code and <br />
                                                         bring ideas to life using object-oriented programming languages.
                                                     </p>
@@ -91,6 +92,9 @@ const HomeScreen: React.FC = () => {
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div className="col-4">
+                                                <img style={{ width: "100%", height: "auto" }} src={HomeIllustration} alt="img not found" />
                                             </div>
                                         </div>
                                     </div>
