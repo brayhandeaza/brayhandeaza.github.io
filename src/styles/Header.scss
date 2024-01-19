@@ -1,11 +1,16 @@
 .Header {
     height: 60px;
+    z-index: 10000;
+    background: #fff;
+
+    position: sticky;
+    top: 0;
+
     display: flex;
     justify-content: space-between;
 
     .left {
         display: flex;
-        align-items: center;
 
         img {
             width: 40px !important;
@@ -22,10 +27,15 @@
 
 
 @media screen and (width > 600px) {
+    .modal-pdf, .pdf-pages {
+        width: 55% !important;
+    }
+
     .Header {
         height: 60px;
         display: flex;
         justify-content: space-between;
+
 
 
         .collapsed-menu {
@@ -40,6 +50,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            .hide-full {
+                background: #000;
+            }
 
             .menu-items-full {
                 background: transparent;
@@ -61,9 +75,12 @@
                     }
 
                     .ant-menu-title-content {
-                        font-weight: 500;
+                        font-weight: 600;
                     }
+
                 }
+
+
             }
 
             button {
@@ -71,12 +88,14 @@
                 border: none;
                 margin-top: 5px;
                 color: #252525;
+                font-weight: 600;
+
 
                 &:hover {
                     background: #ef0454;
                     color: rgb(255, 255, 255) !important;
                     transition: 0.3s;
-                    transform: scale(1.02);
+                    transform: scale(1.05);
                 }
 
                 &:active {
@@ -88,22 +107,32 @@
 }
 
 
-
-
 @media screen and (width < 600px) {
     .Header {
+        display: flex;
+        justify-content: space-between;
+
+
         .menu-full {
             display: none !important;
         }
 
+
         .right {
-            width: 200px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
 
-
+            .collapsed-menu-wrapper {
+                z-index: 1000;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
+            }
 
             .menu-items {
+                width: 100vw;
                 background: transparent;
                 border-radius: 5px;
 
@@ -115,10 +144,12 @@
                     background: #000000;
                     border-radius: 5px;
 
+
                     &:hover {
                         background: #ef0454;
                         transition: all 0.5s;
                     }
+
                 }
             }
 

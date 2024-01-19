@@ -1,19 +1,68 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  width: 100%;
-  // height: 100vh;
-  padding: 20px 5%;
+	width: 100vw;
+	// height: 100vh;
+	padding: 20px 5%;
+}
+
+
+.hover:hover {
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.download-button {
+	position: sticky !important;
+	top: 20px;
+	z-index: 1000;
+
+	display: flex;
+	justify-content: flex-end;
+
+	.download-button-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		padding: 0;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+		background: #ffffff;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+
+		&:hover {
+			cursor: pointer;
+			opacity: 0.8;
+			transition: all 0.2s;
+		}
+
+		&:active {
+			opacity: 0.6;
+			transition: all 0.2s;
+		}
+	}
+}
+
+
+.ant-menu-item {
+
+	&:hover {
+		transform: scale(1.05);
+		transition: all 0.2s;
+	}
 }

@@ -1,8 +1,37 @@
 import "@styles/HomeScreen.scss"
-import { FiMail } from "react-icons/fi"
-import { FaFacebook, FaPlay, FaInstagram, FaTwitter } from "react-icons/fa"
+import { FiDownload, FiSend } from "react-icons/fi"
+import { FaFacebook, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa"
+import { Link } from "react-router-dom"
+import { Button } from "antd"
+import { Modal, PDF } from "@components"
+import { useState } from "react"
 
-const HomeScreen = () => {
+const HomeScreen: React.FC = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+    const socialMedias = [
+        {
+            icon: <FaFacebook size={20} />,
+            link: "https://www.facebook.com/SoyBrayhanDeAza"
+        },
+        {
+            icon: <FaInstagram size={20} />,
+            link: "https://www.instagram.com/brayhandeaza"
+        },
+        {
+            icon: <FaLinkedin size={20} />,
+            link: "https://www.linkedin.com/in/brayhandeaza/"
+        },
+        {
+            icon: <FaTwitter size={20} />,
+            link: "https://twitter.com/brayhandeaza"
+        }
+    ]
+    const onMyResumeClick = () => {
+        setIsModalOpen(true);
+    }
+
     return (
         <div className="HomeScreen">
             <main className="">
@@ -12,25 +41,17 @@ const HomeScreen = () => {
                             <div className="bd-single-slider d-flex align-items-center">
                                 <div className="bd-slide-bg d-flex" style={{ height: "auto" }}>
                                     <div style={{ marginTop: 80, paddingRight: 50 }} className="bd-slider-five-social wow fadeInUp">
-                                        <span style={{ marginLeft: -4, fontWeight: "600", marginBottom: 20 }}>
+                                        <span style={{ marginLeft: -1, fontWeight: "600", marginBottom: 20 }}>
                                             Me
                                         </span>
                                         <ul className="bd-social-icon mb-4">
-                                            <li>
-                                                <a href="https://www.facebook.com/">
-                                                    <FaFacebook size={20} />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/">
-                                                    <FaInstagram size={20} />
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="https://www.facebook.com/">
-                                                    <FaTwitter size={20} />
-                                                </a>
-                                            </li>
+                                            {socialMedias.map((socialMedia, index) => (
+                                                <li key={`social-media-${index}`}>
+                                                    <Link target="_blank" to={socialMedia.link}>
+                                                        {socialMedia.icon}
+                                                    </Link>
+                                                </li>
+                                            ))}
                                         </ul>
                                         <span style={{ fontWeight: "600" }}>Follow</span>
                                     </div>
@@ -43,25 +64,30 @@ const HomeScreen = () => {
                                                     </div>
                                                     <h1 className="bd-slider-five-title wow fadeInUp" data-wow-delay=".4s">I'm Brayhan</h1>
                                                     <h2 className="bd-slider-five-subtitle mb-30 wow fadeInUp" data-wow-delay=".6s">
-                                                        a Software <span>Engineer</span>
+                                                        a Software <span>Engineer.</span>
                                                     </h2>
                                                     <p className="mb-30 wow fadeInUp" data-wow-delay=".8s">
-                                                        I'm a Software Engineer with  <b>5+ years experience </b>  who loves to code and <br /> bring ideas to life using object-oriented programming languages.
+                                                        I'm a Software Engineer with  <b>5+ years experience </b>  who loves to code and <br />
+                                                        bring ideas to life using object-oriented programming languages.
                                                     </p>
-                                                    <div className="bd-slider-five-btn wow fadeInUp" data-wow-delay="1s">
-                                                        <a className="theme-btn d-flex align-items-center " href="/contact">
-                                                            Say Hello <FiMail className="ms-2" size={18} />
+                                                    <div className="bd-slider-five-btn wow fadeInUp button-down-fade" data-wow-delay="1s">
+                                                        <a className="theme-btn d-flex align-items-center mb-10 " href="/contact">
+                                                            Say Hello <FiSend className="ms-2" size={18} />
                                                         </a>
                                                     </div>
-                                                    <div className="bd-slider-five-video">
-                                                        <div className="bd-slider-five-video-icon wow fadeInUp" data-wow-delay="1.2s">
-                                                            <a className="play_btn popup-video" href="">
-                                                                <FaPlay size={15} />
-                                                            </a>
+
+                                                    <div className="ms-1 bd-slider-five-video show-on-mobile">
+                                                        <div style={{borderRadius: 100 }} className="bd-slider-five-video-icon wow ms-3" data-wow-delay="1.2s">
+                                                            <Button onClick={onMyResumeClick} className="play_btn popup-video resume-btn">
+                                                                <FiDownload color="#6a6a6a" size={15} />
+                                                            </Button>
+                                                            <Modal onClose={(open: boolean) => setIsModalOpen(open)} open={isModalOpen} >
+                                                                <PDF />
+                                                            </Modal>
                                                         </div>
                                                         <div className="bd-slider-five-video-text wow fadeInUp" data-wow-delay="1.4s">
-                                                            <span>Watch</span>
-                                                            <h5>How I Work</h5>
+                                                            <span>Take a look at</span>
+                                                            <h5>My Resume</h5>
                                                         </div>
                                                     </div>
                                                 </div>

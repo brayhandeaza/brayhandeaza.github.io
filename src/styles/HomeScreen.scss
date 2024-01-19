@@ -8,9 +8,59 @@
 
 @media screen and (width < 600px) {
     .HomeScreen {
+        .show-on-mobile {
+            display: flex;
+            width: 300px;
+            
+            
+            .fadeInUp {
+                margin-bottom: 20px !important;
+            }
+        }
+
         main {
             margin-top: 60px;
         }
+
+        .fadeInUp {
+            margin-top: 20px;
+        }
+
+        .button-down-fade {
+            margin-bottom: 10px !important;
+        }
     }
+
+}
+
+@media screen and (width > 600px) {
+    .HomeScreen {
+        .show-on-mobile {
+            display: none;
+        }
+
+        main {
+            margin-top: 60px;
+        }
+
+        .fadeInUp {
+            margin-top: 20px;
+        }
+
+        .button-down-fade {
+            margin-bottom: 10px !important;
+        }
+    }
+
+}
+
+
+.resume-btn {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 100% !important;
+    // background: #000 !important;
     
+    border: none !important;
+    outline: none !important;
 }

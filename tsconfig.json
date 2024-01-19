@@ -23,6 +23,9 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
     "paths": {
+      "@/*": [
+        "src/*"
+      ],
       "@components": [
         "src/components/index.ts"
       ],
@@ -43,6 +46,9 @@
       ],
       "@redux": [
         "src/redux/index.ts"
+      ],
+      "@mocks": [
+        "src/mocks/index.ts"
       ]
     }
   },
