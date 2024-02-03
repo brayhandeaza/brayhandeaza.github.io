@@ -1,5 +1,9 @@
+@import "./colors";
+
 .Header {
     height: 60px;
+    z-index: 1000;
+    background: $primaryDark;
 
     position: sticky;
     top: 0;

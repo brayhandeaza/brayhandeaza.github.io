@@ -58,7 +58,7 @@ const HomeScreen: React.FC = () => {
                                     </div>
                                     <div className="container ps-0 ms-0">
                                         <div className="row d-flex">
-                                            <div className="col-8">
+                                            <div className={`col-${window.innerWidth < 400 ? "12" : "8"}`}>
                                                 <div className="bd-slider-five z-index">
                                                     <div className="bd-slider-five-hello mb-10 wow fadeInUp" data-wow-delay=".2s">
                                                         <span>Hi There,</span>

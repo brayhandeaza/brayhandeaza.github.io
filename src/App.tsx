@@ -5,8 +5,9 @@ import { Header } from '@components'
 
 const App: React.FC = () => {
 	return (
-		<div className='App'>
+		<>
 			<Header />
+			<div className="App">
 				<Routes>
 					<Route path="/" element={<HomeScreen />} />
 					<Route path="/portfolio" element={<PortfolioScreen />} />
@@ -15,7 +16,8 @@ const App: React.FC = () => {
 					<Route path="/skills" element={<h1>Skills</h1>} />
 					<Route path="/contact" element={<ContactScreen />} />
 				</Routes>
-		</div>
+			</div>
+		</>
 	)
 }
 

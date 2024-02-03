@@ -32152,7 +32152,8 @@ select {
 }
 
 .gray-bg {
-    background-color: var(--clr-bg-gray)
+    /* border: 1px solid var(--clr-bg-gray); */
+    background-color: var(--clr-body-heading);
 }
 
 .heading-bg {
@@ -33537,23 +33538,20 @@ select {
 }
 
 .theme-btn {
-    font-size: 14px;
-    display: inline-flex;
-    justify-content: center;
-    font-weight: 600;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    height: 60px;
-    line-height: 60px;
+    width: 180px !important;
+    height: 50px;
     border-radius: 10px;
+    font-size: 14px;
     color: var(--clr-common-white);
     background-color: var(--clr-theme-1);
-    padding: 0 38px;
-    cursor: pointer;
-    position: relative;
+    border: none;
+    font-weight: 600 !important;
     overflow: hidden;
-    text-transform: uppercase
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .theme-btn.h-55 {
@@ -33624,7 +33622,7 @@ select {
     position: absolute;
     top: -35px;
     transform: rotate(35deg);
-    transition: all 1.6s cubic-bezier(.19, 1, .22, 1);
+    /* transition: all 1.6s cubic-bezier(.19, 1, .22, 1); */
     width: 60px;
     opacity: 0
 }
@@ -33639,7 +33637,7 @@ select {
 .theme-btn-border:hover:before,
 .theme-btn:hover:before {
     left: 120%;
-    transition: all 1.3s cubic-bezier(.19, 1, .22, 1);
+    /* transition: all 1.3s cubic-bezier(.19, 1, .22, 1); */
     opacity: .25
 }
 
@@ -36195,7 +36193,7 @@ only screen and (min-width:768px)and (max-width:991px) {
 
 .bd-service {
     border-radius: 5px;
-    background: var(--clr-common-white);
+    /* background: var(--clr-common-white); */
     transition: all .3s ease-out 0s;
     padding: 38px 35px 30px;
     min-height: calc(100% - 30px)
@@ -37791,13 +37789,14 @@ only screen and (min-width:992px)and (max-width:1199px) {
     height: 60px;
     width: 100%;
     border-radius: 10px;
-    background: var(--clr-common-white);
+    background-color: var(--clr-body-heading) !important;
     border: none;
     font-size: 16px;
     font-weight: 400;
     padding: 0 20px;
     outline: none;
-    color: var(--clr-body-text)
+    border: 0.8px solid var(--clr-body-text);
+    color: var(--bs-white)
 }
 
 .bd-contact-field input::placeholder,
@@ -37864,7 +37863,8 @@ only screen and (min-width:992px)and (max-width:1199px) {
 .bd-contact-wrapper .bd-contct-item {
     display: flex;
     padding: 40px 40px 35px;
-    border-radius: 10px
+    border-radius: 10px;
+    border: 0.8px solid var(--clr-body-text);
 }
 
 @media(max-width:575px) {

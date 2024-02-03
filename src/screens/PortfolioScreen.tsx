@@ -1,33 +1,45 @@
-import {  useState } from "react"
+import { useEffect, useState } from "react"
 import { PROJECTS } from '@mocks'
 import { Link } from "react-router-dom"
+import { getDocs, getDoc, collection, doc } from "firebase/firestore"
+import { firestore, } from "../firebase"
 
 const PortfolioScreen: React.FC = () => {
     const [currentProject, setCurrentProject] = useState("all")
+    const [projects, setProjects] = useState<any[]>([])
 
-    const projectImageSize = (key: number) => {
-        switch (key) {
-            case 0:
-                return {
-                    width: 850,
-                    height: 600,
-                    col: 8
-                }
 
-            case 1:
-                return {
-                    width: 410,
-                    height: 600,
-                    col: 4
-                }
+    const fetchData = async () => {
+        const allProjects: any[] = []
+        const data = await getDocs(collection(firestore, "projects"))
 
-            default:
-                return {
-                    width: 410,
-                    height: 340,
-                    col: 4
-                }
-        }
+        const snap = await getDoc(doc(firestore, 'projects', 'isyfxEAQCAsbyAwCiR4A'))
+        
+
+        data.forEach((doc) => {
+            allProjects.push({ ...doc.data(), id: doc.id })
+        })
+
+        setProjects(allProjects)
+
+        console.log(snap.data());
+
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+
+    const filterProjects = (filter: string) => {
+        if (filter === currentProject) return
+
+        if (filter === "all")
+            setProjects(PROJECTS)
+        else
+            setProjects(PROJECTS.filter(project => project.category.toLowerCase() === filter.toLowerCase()))
+
+        setCurrentProject(filter)
 
     }
 
@@ -49,36 +61,36 @@ const PortfolioScreen: React.FC = () => {
                 <section className="bd-portfolio-area pt-50 pb-150">
                     <div className="filter-wrapper">
                         <div className="button-group portfolio-btn-group mb-30 text-center">
-                            <button onClick={() => setCurrentProject("all")} className={currentProject === "all" ? "active" : ""}>All</button>
-                            <button onClick={() => setCurrentProject("front-end")} className={currentProject === "front-end" ? "active" : ""} type="button">Front-End</button>
-                            <button onClick={() => setCurrentProject("back-end")} className={currentProject === "back-end" ? "active" : ""} type="button">Back-End</button>
-                            <button onClick={() => setCurrentProject("web")} className={currentProject === "web" ? "active" : ""} type="button">Web</button>
-                            <button onClick={() => setCurrentProject("mobile")} className={currentProject === "mobile" ? "active" : ""} type="button">Mobile</button>
-                            <button onClick={() => setCurrentProject("desktop")} className={currentProject === "desktop" ? "active" : ""} type="button">Desktop</button>
+                            <button onClick={() => filterProjects("all")} className={currentProject === "all" ? "active" : ""}>All</button>
+                            <button onClick={() => filterProjects("front-end")} className={currentProject === "front-end" ? "active" : ""} type="button">Front-End</button>
+                            <button onClick={() => filterProjects("back-end")} className={currentProject === "back-end" ? "active" : ""} type="button">Back-End</button>
+                            <button onClick={() => filterProjects("web")} className={currentProject === "web" ? "active" : ""} type="button">Web</button>
+                            <button onClick={() => filterProjects("Mobile")} className={currentProject === "mobile" ? "active" : ""} type="button">Mobile</button>
+                            <button onClick={() => filterProjects("desktop")} className={currentProject === "desktop" ? "active" : ""} type="button">Desktop</button>
                         </div>
                         <div className="container mb-30">
                             <div className="row">
-                                {PROJECTS.map((project, index) => (
-                                    <div key={`project-${index}`} className={`hover col-lg-${projectImageSize(index).col} col-md-6 grid-item cat2`}>
-                                        <Link to={`/portfolio/${index + 1}`} key={`project-${index}`} className={`hover col-lg-${projectImageSize(index).col} col-md-6 grid-item cat2`}>
+                                {projects.map((project, index) => (
+                                    <div key={`project-${index}`} className={`hover col-lg-4 col-md-6 grid-item cat2`}>
+                                        <Link to={`/portfolio/${project.id}`} key={`project-${index}`} className={`hover col-lg-4 col-md-6 grid-item cat2`}>
                                             <div className="bd-portfolio mb-30">
                                                 <img
                                                     alt="porfolio not found"
                                                     loading="lazy"
-                                                    width={projectImageSize(index).width}
-                                                    height={projectImageSize(index).height}
+                                                    width={410}
+                                                    height={340}
                                                     decoding="async"
                                                     data-nimg="1"
-                                                    src={project.img} style={{ color: "transparent" }}
+                                                    src={project.image} style={{ color: "transparent" }}
                                                 />
                                                 <div className="bd-portfolio-text">
                                                     <span>{project.category}</span>
-                                                    <h5 className="bd-portfolio-title">
-                                                        <a href="/portfolio-details/10">{project.name}</a>
+                                                    <h5 className="bd-portfolio-titlee">
+                                                        <a style={{ textTransform: "capitalize" }} href="/portfolio-details/10">{project.name}</a>
                                                     </h5>
 
                                                     <div>
-                                                        {project.technologies.map((technology, index) => (
+                                                        {project.technologies.map((technology: string, index: number) => (
                                                             <img
                                                                 key={`technology-${index}`}
                                                                 style={{ marginRight: 10, width: 25, objectFit: "contain" }}

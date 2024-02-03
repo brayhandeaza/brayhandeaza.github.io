@@ -1,17 +1,25 @@
+import { useEmail } from "@hooks"
 import "@styles/Contact.scss"
-import { useState } from "react"
+import { Result } from 'antd'
+import { useState, useRef } from "react"
 import { MdLocationPin, MdEmail } from "react-icons/md"
 
 const ContactScreen: React.FC = () => {
-	const [email, setEmail] = useState("")
-	const [message, setMessage] = useState("")
-	const [subject, setSubject] = useState("")
-	const [name, setName] = useState("")
+	const [emailSent, setEmailSent] = useState<boolean>(false)
+	const form = useRef<HTMLFormElement>(null)
+	const { sendEmail } = useEmail()
 
-	
-	const onSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+
+
+
+	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		console.table({ email, message, subject, name })
+
+		if (!form.current) return
+
+		const res = await sendEmail(form.current)
+		setEmailSent(res)
+		console.log(res)
 	}
 
 	return (
@@ -55,37 +63,51 @@ const ContactScreen: React.FC = () => {
 								</div>
 							</div>
 							<div className="col-xxl-8 col-xl-7 col-lg-7">
-								<div className="bd-contact-form-wrapper mb-50">
-									<form>
-										<div className="row">
-											<div className="col-md-6">
-												<div className="bd-contact-field mb-30">
-													<input onChange={(e) => setName(e.target.value)} placeholder="Name" id="name" type="text" value={name} name="name" />
+								{emailSent ? (
+									<div style={{ borderRadius: "10px" }} className="bd-contact-form-wrapper gray-bg">
+										<Result className="result-and" style={{ color: "#ef0454" }}
+											status="success"
+											title={<span>Email successfully sent!</span>}
+											extra={[
+												<div className="d-flex justify-content-center">
+													<button onClick={() => setEmailSent(true)} className="theme-btn">New Email</button>
+												</div>
+											]}
+										/>
+									</div>
+								) : (
+									<div className="bd-contact-form-wrapper mb-50">
+										<form onSubmit={onSubmit} ref={form}>
+											<div className="row">
+												<div className="col-md-6">
+													<div className="bd-contact-field mb-30">
+														<input placeholder="Name" id="name" type="text" name="name" />
+													</div>
+												</div>
+												<div className="col-md-6">
+													<div className="bd-contact-field mb-30">
+														<input placeholder="Email" id="email" type="email" name="email" />
+													</div>
+												</div>
+												<div className="col-12">
+													<div className="bd-contact-field mb-30">
+														<input placeholder="Subject" id="subject" type="text" name="subject" />
+													</div>
+												</div>
+												<div className="col-12">
+													<div className="bd-contact-field mb-30">
+														<textarea name="msg" id="message" placeholder="Message..." />
+													</div>
+												</div>
+												<div className="col-12">
+													<div className="bd-contact-field">
+														<button type="submit" className="theme-btn">Submit</button>
+													</div>
 												</div>
 											</div>
-											<div className="col-md-6">
-												<div className="bd-contact-field mb-30">
-													<input onChange={(e) => setEmail(e.target.value)} placeholder="Email" id="email" type="email" value={email} name="email" />
-												</div>
-											</div>
-											<div className="col-12">
-												<div className="bd-contact-field mb-30">
-													<input onChange={(e) => setSubject(e.target.value)} placeholder="Subject" id="subject" type="text" value={subject} name="subject" />
-												</div>
-											</div>
-											<div className="col-12">
-												<div className="bd-contact-field mb-30">
-													<textarea onChange={(e) => setMessage(e.target.value)} name="msg" id="message" value={message} placeholder="Message..." />
-												</div>
-											</div>
-											<div className="col-12">
-												<div className="bd-contact-field">
-													<button onClick={onSubmit} type="submit" className="theme-btn">Submit</button>
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
+										</form>
+									</div>
+								)}
 							</div>
 						</div>
 					</div>

@@ -72,17 +72,57 @@ body {
 
 
 :where(.css-dev-only-do-not-override-zcfrx9).ant-modal .ant-modal-content {
-    background-color: transparent !important;
+	background-color: transparent !important;
 	padding: 0 !important;
 	padding-top: 25px !important;
 }
 
 
-:where(h1, h2, h3, h4, h5, h6, span, a, p, b) {
+.App :where(h1, h2, h3, h4, h5, h6, span, a, p, b, button, li) {
 	color: $primaryText !important;
 }
 
 
 :where(svg) {
 	fill: $primaryText;
+}
+
+
+.PDF span {
+	display: none !important;
+	color: #000000 !important;
+}
+
+.result-and {
+	:where(button) {
+		width: 180px;
+		height: 50px;
+		background: #ef0454;
+		border: none;
+		font-weight: 600;
+		color: #ffffff !important;
+
+		&:hover {
+			cursor: pointer;
+			opacity: 0.8;
+			background: #ef0454 !important;
+			transform: scale(1.05);
+			transition: all 0.2s;
+
+		}
+	}
+
+	:where(svg) {
+		fill: #13c472 !important;
+
+	}
+}
+
+:where(.theme-btn) {
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8 !important;
+		transform: scale(1.05) !important;
+		transition: all 0.2s !important;
+	}
 }
