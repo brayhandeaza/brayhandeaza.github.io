@@ -5,7 +5,7 @@ import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
 import { useEffect, useState } from "react";
 import { MdWorkOutline } from "react-icons/md"
-import { FaOsi, FaEnvelope } from "react-icons/fa"
+import { FaEnvelope, FaInfoCircle } from "react-icons/fa"
 import { FiDownload, } from "react-icons/fi"
 import { Link, useLocation } from "react-router-dom";
 import { PDF, Modal } from "@components";
@@ -35,8 +35,8 @@ const Header = () => {
         },
         {
             key: '1',
-            icon: <MdWorkOutline style={{fill: menuItemsColor("/skills"), position: "relative", left: "5px" }} size={15} />,
-            label: <Link style={{ color: menuItemsColor("/skills") }} onClick={() => setCollapsed(!collapsed)} to="/skills">Skills</Link>
+            icon: <FaInfoCircle style={{fill: menuItemsColor("/about"), position: "relative", left: "5px" }} size={15} />,
+            label: <Link style={{ color: menuItemsColor("/about") }} onClick={() => setCollapsed(!collapsed)} to="/about">About Me</Link>
         },
         {
             key: '2',

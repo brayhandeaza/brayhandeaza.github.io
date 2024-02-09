@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { Button } from "antd"
 import { Modal, PDF } from "@components"
 import { useState } from "react"
-import { HomeIllustration } from "@assets"
+// import { HomeIllustration } from "@assets"
 
 const HomeScreen: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -94,7 +94,7 @@ const HomeScreen: React.FC = () => {
                                                 </div>
                                             </div>
                                             <div className="col-4">
-                                                <img style={{ width: "100%", height: "auto" }} src={HomeIllustration} alt="img not found" />
+                                                {/* <img style={{ width: "100%", height: "auto" }} src={HomeIllustration} alt="img not found" /> */}
                                             </div>
                                         </div>
                                     </div>
