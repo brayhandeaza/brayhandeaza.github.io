@@ -69,9 +69,9 @@ const ProjectDetailsScreen: React.FC = () => {
                                                 ))}
                                             </div>
                                             <h4 className="mb-10">Documentation</h4>
-                                            <p className="mb-15">When an unknown printer took a galley of type and scrambled it to make a type
+                                            {/* <p className="mb-15">When an unknown printer took a galley of type and scrambled it to make a type
                                                 specimen book has been survived not only five centuries, but also the leap into electronic
-                                                typesetting. Master the tools that front-end developers use every day.</p>
+                                                typesetting. Master the tools that front-end developers use every day.</p> */}
                                             <div className="row">
                                                 <Link target="_blank" to={`${project?.notion}`} className="col-md-6">
                                                     <div className="bd-service mb-30">

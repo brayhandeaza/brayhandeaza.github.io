@@ -15,6 +15,7 @@ export default defineConfig({
 			'@contexts': path.resolve(__dirname, './src/contexts'),
 			'@redux': path.resolve(__dirname, './src/redux'),
 			'@mocks': path.resolve(__dirname, './src/mocks'),
+			'@helpers': path.resolve(__dirname, './src/helpers'),
 			'@hooks': path.resolve(__dirname, './src/hooks'),
 			'@constants': path.resolve(__dirname, './src/constants')
 		}

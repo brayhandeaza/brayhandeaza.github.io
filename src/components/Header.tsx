@@ -5,7 +5,7 @@ import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
 import { useEffect, useState } from "react";
 import { MdWorkOutline } from "react-icons/md"
-import { FaEnvelope, FaInfoCircle } from "react-icons/fa"
+import { FaEnvelope } from "react-icons/fa"
 import { FiDownload, } from "react-icons/fi"
 import { Link, useLocation } from "react-router-dom";
 import { PDF, Modal } from "@components";
@@ -23,24 +23,22 @@ const Header = () => {
         if (location.pathname.includes(path))
             return "#ef0454"
         return "white"
-
     }
-
 
     const items: MenuProps['items'] = [
         {
             key: '0',
-            icon: <FaEnvelope style={{fill: menuItemsColor("/contact"), color: "white", position: "relative", top: "1px", left: "5px" }} size={16} />,
+            icon: <FaEnvelope style={{ fill: menuItemsColor("/contact"), color: "white", position: "relative", top: "1px", left: "5px" }} size={16} />,
             label: <Link style={{ color: menuItemsColor("/contact") }} onClick={() => setCollapsed(!collapsed)} to="/contact">Contact Me</Link>
         },
-        {
-            key: '1',
-            icon: <FaInfoCircle style={{fill: menuItemsColor("/about"), position: "relative", left: "5px" }} size={15} />,
-            label: <Link style={{ color: menuItemsColor("/about") }} onClick={() => setCollapsed(!collapsed)} to="/about">About Me</Link>
-        },
+        // {
+        //     key: '1',
+        //     icon: <FaInfoCircle style={{fill: menuItemsColor("/about"), position: "relative", left: "5px" }} size={15} />,
+        //     label: <Link style={{ color: menuItemsColor("/about") }} onClick={() => setCollapsed(!collapsed)} to="/about">About Me</Link>
+        // },
         {
             key: '2',
-            icon: <MdWorkOutline style={{fill: menuItemsColor("/portfolio"), position: "relative", left: "5px" }} size={15} />,
+            icon: <MdWorkOutline style={{ fill: menuItemsColor("/portfolio"), position: "relative", left: "5px" }} size={15} />,
             label: <Link style={{ color: menuItemsColor("/portfolio") }} onClick={() => setCollapsed(!collapsed)} to="/portfolio">Portfolio</Link>
         },
         // {
@@ -49,8 +47,6 @@ const Header = () => {
         //     label: <Link style={{ color: menuItemsColor("/source") }} onClick={() => setCollapsed(!collapsed)} to="/source">Open Source</Link>
         // }
     ]
-
-
 
     const toggleCollapsed = (e: { stopPropagation: () => void; }) => {
         e.stopPropagation();
@@ -126,7 +122,7 @@ const Header = () => {
                 />
 
                 <div>
-                    <button  className="d-flex theme-btn align-items-center justify-content-center" onClick={onMyResumeClick}>
+                    <button className="d-flex theme-btn align-items-center justify-content-center" onClick={onMyResumeClick}>
                         <FiDownload style={{ color: "white", fontSize: "20px" }} />
                         <span style={{ color: "white" }} className="ms-2">My Resume</span>
                     </button>

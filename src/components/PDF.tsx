@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
 import '@styles/PDF.scss';
@@ -11,7 +12,7 @@ type Props = {
     width?: number
 }
 
-export default ({ }: Props = {}): JSX.Element => {
+const PDF: React.FC<Props> = (): JSX.Element => {
     const [numPages, setNumPages] = useState<number>();
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
@@ -61,3 +62,5 @@ export default ({ }: Props = {}): JSX.Element => {
         </div>
     );
 }
+
+export default PDF

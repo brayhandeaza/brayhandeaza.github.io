@@ -71,14 +71,16 @@ const HomeScreen: React.FC = () => {
                                                         I'm a Software Engineer with  <b>5+ years experience </b>  who loves to code and <br />
                                                         bring ideas to life using object-oriented programming languages.
                                                     </p>
+                                                    <p className="mb-30 wow fadeInUp textGray" data-wow-delay=".8s">
+                                                        I believe in the power of technology to transform lives and drive positive change, and I'm committed to leveraging my skills and experience to contribute to this vision. Whether you're a fellow developer, a potential collaborator, or simply curious about the world of software engineering, I invite you to connect with me and talk about this exciting journey.
+                                                    </p>
                                                     <div className="bd-slider-five-btn wow fadeInUp button-down-fade" data-wow-delay="1s">
                                                         <a className="theme-btn d-flex align-items-center mb-10 " href="/contact">
                                                             Say Hello <FiSend className="ms-2" size={18} />
                                                         </a>
                                                     </div>
-
                                                     <div className="ms-1 bd-slider-five-video show-on-mobile">
-                                                        <div style={{borderRadius: 100 }} className="bd-slider-five-video-icon wow ms-3" data-wow-delay="1.2s">
+                                                        <div style={{ borderRadius: 100 }} className="bd-slider-five-video-icon wow ms-3" data-wow-delay="1.2s">
                                                             <Button onClick={onMyResumeClick} className="play_btn popup-video resume-btn">
                                                                 <FiDownload color="#6a6a6a" size={15} />
                                                             </Button>

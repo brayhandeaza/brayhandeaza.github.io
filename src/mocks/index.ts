@@ -2,82 +2,26 @@
 
 export const PROJECTS = [
     {
-        uuid: "fgwgdhjwrgjhfsjhkhgfkgdfkgh",
-        category: "Front-End",
-        name: "Netflix",
-        img: "https://saja-react-13-4.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio-img-4.268c7bd5.jpg&w=1920&q=75",
+        category: ["front-end", ["back-end"]],
+        name: "netflix",
+        lastUpdated: "Feb 02, 2024",
+        description: "Using  The Movie Database (TMDb), this application presents users with an expansive library housing a diverse array of films spanning multiple categories and genres. From timeless classics to the latest cinematic releases, users can explore an extensive collection tailored to their unique preferences and interests. With access to a wealth of cinematic treasures at their fingertips, movie enthusiasts can immerse themselves in a world of endless entertainment possibilities.",
+        github: "https://github.com/brayhandeaza/netflix",
+        image: "https://images.ctfassets.net/4cd45et68cgf/637ArQo6YNsJf48Xw3zUAg/d030f9065a0fe54de777eaa600cf3fcb/N-Games_March_936x622.png?w=2000",
+        notion: "https://brayhandeaza.notion.site/Netflix-4e2518cd26994b3b82b0648430e0294d",
         technologies: [
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
+            {
+                name: "React",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+            },
+            {
+                name: "TypeScript",
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"
+            },
+            {
+                name: "TMDb API",
+                image: "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+            }
         ]
-    },
-    {
-        uuid: "ghdfjfhgjgfhjfghjhgdjh",
-        category: "Back-End",
-        name: "Expo",
-        img: "https://saja-react-13-4.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio-img-5.d93c7114.jpg&w=828&q=75",
-        technologies: [
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
-        ]
-    },
-    {
-        uuid: "ghdfjfhgjgfhjfghjhgdjh",
-        category: "Mobile",
-        name: "Expo",
-        img: "https://saja-react-13-4.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio-img-5.d93c7114.jpg&w=828&q=75",
-        technologies: [
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
-        ]
-    },
-    {
-        uuid: "ghdfjfhgjgfhjfghjhgdjh",
-        category: "Mobile",
-        name: "Expo",
-        img: "https://saja-react-13-4.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio-img-5.d93c7114.jpg&w=828&q=75",
-        technologies: [
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
-        ]
-    },
-    {
-        uuid: "ghdfjfhgjgfhjfghjhgdjh",
-        category: "Mobile",
-        name: "Expo",
-        img: "https://saja-react-13-4.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio-img-5.d93c7114.jpg&w=828&q=75",
-        technologies: [
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
-        ]
-    },
-    {
-        uuid: "ghdfjfhgjgfhjfghjhgdjh",
-        category: "Mobile",
-        name: "Expo",
-        img: "https://saja-react-13-4.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio-img-5.d93c7114.jpg&w=828&q=75",
-        technologies: [
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://static-00.iconduck.com/assets.00/node-js-icon-1901x2048-mk1e13df.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png"
-        ]
-    },
-
+    }
 ]

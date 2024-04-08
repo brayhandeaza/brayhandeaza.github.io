@@ -5,6 +5,7 @@ export const useEmail = () => {
 
     const sendEmail = async (form: HTMLFormElement) => {
         let success = false
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await emailjs.sendForm(VITE_EMAIL_JS_SERVICE_ID, VITE_EMAIL_JS_TEMPLATE_ID, form, VITE_EMAIL_JS_PUBLIC_KEY).then((result: any) => {
             success = result.text === "OK"
 

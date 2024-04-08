@@ -16,6 +16,8 @@ const ContactScreen: React.FC = () => {
 		e.preventDefault()
 
 		if (!form.current) return
+		console.log(form.current);
+
 
 		const res = await sendEmail(form.current)
 		setEmailSent(res)
@@ -70,7 +72,7 @@ const ContactScreen: React.FC = () => {
 											title={<span>Email successfully sent!</span>}
 											extra={[
 												<div className="d-flex justify-content-center">
-													<button onClick={() => setEmailSent(true)} className="theme-btn">New Email</button>
+													<button type="button" onClick={() => setEmailSent(false)} className="theme-btn">New Email</button>
 												</div>
 											]}
 										/>
@@ -96,7 +98,7 @@ const ContactScreen: React.FC = () => {
 												</div>
 												<div className="col-12">
 													<div className="bd-contact-field mb-30">
-														<textarea name="msg" id="message" placeholder="Message..." />
+														<textarea name="message" id="message" placeholder="Message..." />
 													</div>
 												</div>
 												<div className="col-12">

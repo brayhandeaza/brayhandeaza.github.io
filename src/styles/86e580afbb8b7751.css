@@ -36403,7 +36403,7 @@ only screen and (min-width:992px)and (max-width:1199px) {
     height: 0%;
     width: 100%;
     content: "";
-    background: linear-gradient(hsla(0, 0%, 9%, .06), #9f0036);
+    background: linear-gradient(hsla(0, 0%, 9%, .06), #000000);
     opacity: .85;
     left: 0;
     bottom: 0;

@@ -1,29 +1,26 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react"
-import { PROJECTS } from '@mocks'
 import { Link } from "react-router-dom"
-import { getDocs, getDoc, collection, doc } from "firebase/firestore"
+import { getDocs, collection } from "firebase/firestore"
 import { firestore, } from "../firebase"
+import { Project } from "@/helpers/types"
 
 const PortfolioScreen: React.FC = () => {
     const [currentProject, setCurrentProject] = useState("all")
-    const [projects, setProjects] = useState<any[]>([])
+    const [projects, setProjects] = useState<Project[]>([])
+    const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
 
 
     const fetchData = async () => {
         const allProjects: any[] = []
         const data = await getDocs(collection(firestore, "projects"))
 
-        const snap = await getDoc(doc(firestore, 'projects', 'isyfxEAQCAsbyAwCiR4A'))
-        
-
         data.forEach((doc) => {
             allProjects.push({ ...doc.data(), id: doc.id })
         })
 
         setProjects(allProjects)
-
-        console.log(snap.data());
-
+        setFilteredProjects(allProjects)
     }
 
     useEffect(() => {
@@ -35,12 +32,11 @@ const PortfolioScreen: React.FC = () => {
         if (filter === currentProject) return
 
         if (filter === "all")
-            setProjects(PROJECTS)
+            setFilteredProjects(projects)
         else
-            setProjects(PROJECTS.filter(project => project.category.toLowerCase() === filter.toLowerCase()))
+            setFilteredProjects(projects.filter(project => project.category?.includes(filter.toLowerCase())))
 
         setCurrentProject(filter)
-
     }
 
 
@@ -70,7 +66,7 @@ const PortfolioScreen: React.FC = () => {
                         </div>
                         <div className="container mb-30">
                             <div className="row">
-                                {projects.map((project, index) => (
+                                {filteredProjects.map((project, index) => (
                                     <div key={`project-${index}`} className={`hover col-lg-4 col-md-6 grid-item cat2`}>
                                         <Link to={`/portfolio/${project.id}`} key={`project-${index}`} className={`hover col-lg-4 col-md-6 grid-item cat2`}>
                                             <div className="bd-portfolio mb-30">
@@ -84,17 +80,15 @@ const PortfolioScreen: React.FC = () => {
                                                     src={project.image} style={{ color: "transparent" }}
                                                 />
                                                 <div className="bd-portfolio-text">
-                                                    <span>{project.category}</span>
-                                                    <h5 className="bd-portfolio-titlee">
-                                                        <a style={{ textTransform: "capitalize" }} href="/portfolio-details/10">{project.name}</a>
-                                                    </h5>
+                                                    <h5 style={{ textTransform: "capitalize" }} className="bd-portfolio-titlee mb-0">{project.name}</h5>
+                                                    <span className="mb-2 capitalize">{project.category?.join(" & ")}</span>
 
-                                                    <div>
-                                                        {project.technologies.map((technology: string, index: number) => (
+                                                    <div className="d-flex align-items-center">
+                                                        {project.technologies?.map((technology: { image: string }, index: number) => (
                                                             <img
                                                                 key={`technology-${index}`}
-                                                                style={{ marginRight: 10, width: 25, objectFit: "contain" }}
-                                                                src={technology.toString()}
+                                                                style={{ marginRight: 10, width: 22, height: 22 }}
+                                                                src={technology.image.toString()}
                                                                 alt={"technology-" + index}
                                                             />
                                                         ))}
