@@ -1,12 +1,13 @@
 import '@styles/App.scss'
 import { HomeScreen, ContactScreen, PortfolioScreen, ProjectDetailsScreen } from '@screens'
 import { Route, Routes } from 'react-router-dom'
-import { Header } from '@components'
+
+
+
 
 const App: React.FC = () => {
 	return (
 		<>
-			<Header />
 			<div className="App">
 				<Routes>
 					<Route path="/" element={<HomeScreen />} />

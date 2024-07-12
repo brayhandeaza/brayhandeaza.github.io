@@ -11,7 +11,7 @@ import { Link, useLocation } from "react-router-dom";
 import { PDF, Modal } from "@components";
 
 
-const Header = () => {
+const Header: React.FC = () => {
 
     const [collapsed, setCollapsed] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -121,7 +121,7 @@ const Header = () => {
                     }}
                 />
 
-                <div>
+                <div >
                     <button className="d-flex theme-btn align-items-center justify-content-center" onClick={onMyResumeClick}>
                         <FiDownload style={{ color: "white", fontSize: "20px" }} />
                         <span style={{ color: "white" }} className="ms-2">My Resume</span>

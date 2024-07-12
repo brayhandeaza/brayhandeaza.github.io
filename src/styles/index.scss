@@ -72,7 +72,7 @@ body {
 
 
 :where(.css-dev-only-do-not-override-zcfrx9).ant-modal .ant-modal-content {
-	background-color: transparent !important;
+	background-color: red !important;
 	padding: 0 !important;
 	padding-top: 25px !important;
 }
@@ -125,4 +125,9 @@ body {
 		transform: scale(1.05) !important;
 		transition: all 0.2s !important;
 	}
+}
+
+.ant-modal-content {
+	background: transparent !important;
+
 }

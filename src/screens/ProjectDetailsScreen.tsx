@@ -3,7 +3,8 @@ import { firestore, } from "../firebase"
 import { useEffect, useState } from "react"
 import { github, notion } from "@assets"
 import { Link, useParams } from "react-router-dom"
-import { Result } from "antd"
+import { Result, Popover } from "antd"
+import { Header } from "@components"
 
 type Project = {
     name?: string
@@ -14,6 +15,7 @@ type Project = {
     date?: string
     url?: string
     technologies?: any[]
+    category?: any[]
 }
 
 const ProjectDetailsScreen: React.FC = () => {
@@ -27,11 +29,12 @@ const ProjectDetailsScreen: React.FC = () => {
         const query = await getDoc(doc(firestore, 'projects', params.projectId))
         setShow404(Boolean(query.exists()) ? "not" : "yes")
         if (query.exists())
+
             setProject(query.data())
         else
             setProject({})
 
-        console.log(query.exists());
+        console.log(query.data());
 
 
     }
@@ -42,6 +45,7 @@ const ProjectDetailsScreen: React.FC = () => {
     }, [])
     return (
         <>
+            <Header />
             {(show404 === "not") && (
                 <div className="ProjectDetailsScreen">
                     <main>
@@ -99,11 +103,20 @@ const ProjectDetailsScreen: React.FC = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="d-flex justify-content-between mt-30">
+                                                <div className="source-code d-flex justify-content-between mt-30">
                                                     <Link target="_blank" to={`${project?.url}`} className="mr-10 theme-btn">View Live</Link>
-                                                    <Link style={{ padding: 25, backgroundColor: "white" }} target="_blank" to={`${project?.github}`} className="theme-btn">
+
+                                                    <Popover placement="bottom" overlayInnerStyle={{ background: "#343333" }} trigger="hover" content={
+                                                        <div className="d-flex flex-column" style={{ width: 100 }}>
+                                                            {project?.category?.map((category: any, key: number) => (
+                                                                <Link target="_blank" key={`technologie-${key}`} to={category.url}>
+                                                                    <span className="category-name" key={`technologie-${key}`}>{category.name}</span>
+                                                                </Link>
+                                                            ))}
+                                                        </div>
+                                                    } >
                                                         <img style={{ objectFit: "contain" }} src={github} alt="Source Code" />
-                                                    </Link>
+                                                    </Popover>
                                                 </div>
                                             </div>
                                         </div>
