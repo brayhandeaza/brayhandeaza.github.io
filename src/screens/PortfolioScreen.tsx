@@ -65,14 +65,14 @@ const PortfolioScreen: React.FC = () => {
                     </div>
                     <section className="bd-portfolio-area pt-50 pb-150">
                         <div className="filter-wrapper">
-                            <div className="button-group portfolio-btn-group mb-30 text-center">
+                            {/* <div className="button-group portfolio-btn-group mb-30 text-center">
                                 <button onClick={() => filterProjects("all")} className={currentProject === "all" ? "active" : ""}>All</button>
                                 <button onClick={() => filterProjects("front-end")} className={currentProject === "front-end" ? "active" : ""} type="button">Front-End</button>
                                 <button onClick={() => filterProjects("back-end")} className={currentProject === "back-end" ? "active" : ""} type="button">Back-End</button>
                                 <button onClick={() => filterProjects("web")} className={currentProject === "web" ? "active" : ""} type="button">Web</button>
                                 <button onClick={() => filterProjects("Mobile")} className={currentProject === "mobile" ? "active" : ""} type="button">Mobile</button>
                                 <button onClick={() => filterProjects("desktop")} className={currentProject === "desktop" ? "active" : ""} type="button">Desktop</button>
-                            </div>
+                            </div> */}
                             <div className="container mb-30">
                                 <div className="row">
                                     {filteredProjects.map((project, index) => (

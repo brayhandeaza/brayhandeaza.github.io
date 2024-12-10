@@ -104,13 +104,13 @@ const ProjectDetailsScreen: React.FC = () => {
                                                     </div>
                                                 </div>
                                                 <div className="source-code d-flex justify-content-between mt-30">
-                                                    <Link target="_blank" to={`${project?.url}`} className="mr-10 theme-btn">View Live</Link>
+                                                    {project?.url ? <Link target="_blank" to={`${project?.url}`} className="mr-10 theme-btn">View Live</Link> : <span className="mr-10 disabled theme-btn">Live Not Available</span>}
 
                                                     <Popover placement="bottom" overlayInnerStyle={{ background: "#343333" }} trigger="hover" content={
                                                         <div className="d-flex flex-column" style={{ width: 100 }}>
                                                             {project?.category?.map((category: any, key: number) => (
                                                                 <Link target="_blank" key={`technologie-${key}`} to={category.url}>
-                                                                    <span className="category-name" key={`technologie-${key}`}>{category.name}</span>
+                                                                    <span className="category-name" key={`technologie-${key}`}>Open</span>
                                                                 </Link>
                                                             ))}
                                                         </div>
