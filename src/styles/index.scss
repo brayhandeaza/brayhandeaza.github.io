@@ -24,7 +24,9 @@ body {
 
 .hover:hover {
 	cursor: pointer;
+	transform: scale(1.001);
 	transition: all 0.2s;
+	border-color: $primaryRed;
 }
 
 .download-button {

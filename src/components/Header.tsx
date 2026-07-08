@@ -6,17 +6,15 @@ import { Button, Menu } from 'antd';
 import { useEffect, useState } from "react";
 import { MdWorkOutline } from "react-icons/md"
 import { FaEnvelope } from "react-icons/fa"
-import { FiDownload, } from "react-icons/fi"
-import { Link, useLocation } from "react-router-dom";
-import { PDF, Modal } from "@components";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 
 const Header: React.FC = () => {
 
     const [collapsed, setCollapsed] = useState(true);
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [width, setWidth] = useState(window.innerWidth);
     const location = useLocation();
+    const navigate = useNavigate();
 
 
     const menuItemsColor = (path: string) => {
@@ -38,8 +36,27 @@ const Header: React.FC = () => {
         // },
         {
             key: '2',
-            icon: <MdWorkOutline style={{ fill: menuItemsColor("/portfolio"), position: "relative", left: "5px" }} size={15} />,
-            label: <Link style={{ color: menuItemsColor("/portfolio") }} onClick={() => setCollapsed(!collapsed)} to="/portfolio">Portfolio</Link>
+            icon: <MdWorkOutline style={{ fill: location.pathname === "/" ? "#ef0454" : "white", position: "relative", left: "5px" }} size={15} />,
+            label: (
+                <a
+                    href="/"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        setCollapsed(!collapsed)
+                        if (location.pathname === "/") {
+                            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+                        } else {
+                            navigate("/")
+                            setTimeout(() => {
+                                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+                            }, 150)
+                        }
+                    }}
+                    style={{ color: location.pathname === "/" ? "#ef0454" : "white" }}
+                >
+                    Portfolio
+                </a>
+            )
         },
         // {
         //     key: '2',
@@ -62,11 +79,6 @@ const Header: React.FC = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, [width]);
-
-
-    const onMyResumeClick = () => {
-        setIsModalOpen(true);
-    }
 
 
     useEffect(() => {
@@ -120,16 +132,6 @@ const Header: React.FC = () => {
                         console.log(e);
                     }}
                 />
-
-                <div >
-                    <button className="d-flex theme-btn align-items-center justify-content-center" onClick={onMyResumeClick}>
-                        <FiDownload style={{ color: "white", fontSize: "20px" }} />
-                        <span style={{ color: "white" }} className="ms-2">My Resume</span>
-                    </button>
-                    <Modal onClose={(open: boolean) => setIsModalOpen(open)} open={isModalOpen} >
-                        <PDF />
-                    </Modal>
-                </div>
             </div>
         </div >
     )

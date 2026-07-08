@@ -1,32 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { getDocs, collection } from "firebase/firestore"
-import { firestore, } from "../firebase"
 import { Project } from "@/helpers/types"
 import { Header } from "@components"
+import projectsData from "../data/portfolio.json"
 
 const PortfolioScreen: React.FC = () => {
     const [currentProject, setCurrentProject] = useState("all")
-    const [projects, setProjects] = useState<Project[]>([])
-    const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
-
-
-    const fetchData = async () => {
-        const allProjects: any[] = []
-        const data = await getDocs(collection(firestore, "projects"))
-
-        data.forEach((doc) => {
-            allProjects.push({ ...doc.data(), id: doc.id })
-        })
-
-        setProjects(allProjects)
-        setFilteredProjects(allProjects)
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
+    const [projects] = useState<Project[]>(projectsData)
+    const [filteredProjects, setFilteredProjects] = useState<Project[]>(projectsData)
 
 
     const filterProjects = (filter: string) => {
@@ -35,7 +17,7 @@ const PortfolioScreen: React.FC = () => {
         if (filter === "all")
             setFilteredProjects(projects)
         else
-            setFilteredProjects(projects.filter(project => project.category?.includes(filter.toLowerCase())))
+            setFilteredProjects(projects.filter(project => project.category?.some(c => c.name === filter.toLowerCase())))
 
         setCurrentProject(filter)
     }

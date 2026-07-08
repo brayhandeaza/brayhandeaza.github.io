@@ -2,13 +2,15 @@
 
 export type Project = {
     id?: string
-    category?: string[]
+    category?: { name: string; url?: string }[]
     date?: string
     description?: string
+    featured?: boolean
     github?: string
     image?: string
     name?: string
     notion?: string
-    technologies?: { image: string, name: string }[]
+    readme?: string
+    technologies?: { image: string; name: string }[]
     url?: string
 }

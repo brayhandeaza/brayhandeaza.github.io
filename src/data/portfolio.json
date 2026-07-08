@@ -1,0 +1,39 @@
+[
+  {
+    "id": "cromio",
+    "name": "Cromio",
+    "date": "Feb 02, 2024",
+    "description": "Cromio provides both a server and a client in multiple languages, so services written in different stacks can talk to each other using the same wire protocol.",
+    "featured": true,
+    "category": [{ "name": "front-end" }],
+    "technologies": [
+      {
+        "name": "Python",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png"
+      },
+      {
+        "name": "TypeScript",
+        "image": "https://cdn.worldvectorlogo.com/logos/typescript-2.svg"
+      }
+    ],
+    "github": "https://github.com/brayhandeaza/cromio",
+    "notion": "https://brayhandeaza.notion.site/Netflix-4e2518cd26994b3b82b0648430e0294d",
+    "url": ""
+  },
+  {
+    "id": "byper",
+    "name": "Byper",
+    "date": "Feb 02, 2024",
+    "description": "Byper is a Python environment and workflow manager. Each project uses its own local environment ( packages/ ), a declarative manifest ( requirements.yaml ), and a reproducible lockfile ( byper.lock ).",
+    "featured": true,
+    "category": [{ "name": "front-end" }],
+    "technologies": [
+      {
+        "name": "Python",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png"
+      }
+    ],
+    "github": "https://github.com/brayhandeaza/byper",
+    "url": ""
+  }
+]

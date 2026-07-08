@@ -34894,10 +34894,7 @@ only screen and (min-width:992px)and (max-width:1199px) {
     }
 }
 
-.bd-slide-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
+.bd-slide-bg {   
     width: 100%;
     height: 100%;
     opacity: 1;
