@@ -4,9 +4,8 @@ import { MenuOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Button, Menu } from 'antd';
 import { useEffect, useState } from "react";
-import { MdWorkOutline } from "react-icons/md"
 import { FaEnvelope } from "react-icons/fa"
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 const Header: React.FC = () => {
@@ -14,7 +13,6 @@ const Header: React.FC = () => {
     const [collapsed, setCollapsed] = useState(true);
     const [width, setWidth] = useState(window.innerWidth);
     const location = useLocation();
-    const navigate = useNavigate();
 
 
     const menuItemsColor = (path: string) => {
@@ -24,45 +22,7 @@ const Header: React.FC = () => {
     }
 
     const items: MenuProps['items'] = [
-        {
-            key: '0',
-            icon: <FaEnvelope style={{ fill: menuItemsColor("/contact"), color: "white", position: "relative", top: "1px", left: "5px" }} size={16} />,
-            label: <Link style={{ color: menuItemsColor("/contact") }} onClick={() => setCollapsed(!collapsed)} to="/contact">Contact Me</Link>
-        },
-        // {
-        //     key: '1',
-        //     icon: <FaInfoCircle style={{fill: menuItemsColor("/about"), position: "relative", left: "5px" }} size={15} />,
-        //     label: <Link style={{ color: menuItemsColor("/about") }} onClick={() => setCollapsed(!collapsed)} to="/about">About Me</Link>
-        // },
-        {
-            key: '2',
-            icon: <MdWorkOutline style={{ fill: location.pathname === "/" ? "#ef0454" : "white", position: "relative", left: "5px" }} size={15} />,
-            label: (
-                <a
-                    href="/"
-                    onClick={(e) => {
-                        e.preventDefault()
-                        setCollapsed(!collapsed)
-                        if (location.pathname === "/") {
-                            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-                        } else {
-                            navigate("/")
-                            setTimeout(() => {
-                                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-                            }, 150)
-                        }
-                    }}
-                    style={{ color: location.pathname === "/" ? "#ef0454" : "white" }}
-                >
-                    Portfolio
-                </a>
-            )
-        },
-        // {
-        //     key: '2',
-        //     icon: <FaOsi style={{ fill: menuItemsColor("/source"), position: "relative", top: "1px", left: "5px"}} size={16} />,
-        //     label: <Link style={{ color: menuItemsColor("/source") }} onClick={() => setCollapsed(!collapsed)} to="/source">Open Source</Link>
-        // }
+        
     ]
 
     const toggleCollapsed = (e: { stopPropagation: () => void; }) => {
