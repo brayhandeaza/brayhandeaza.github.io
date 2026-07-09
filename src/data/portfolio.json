@@ -1,5 +1,27 @@
 [
   {
+    "id": "yogi",
+    "name": "Yogi Programming Language",
+    "date": "Feb 02, 2024",
+    "description": "A programming language with TypeScript-like syntax and an ahead-of-time native backend.",
+    "featured": true,
+    "category": [{ "name": "front-end" }],
+    "technologies": [
+      {
+        "name": "C++",
+        "image": "https://raw.githubusercontent.com/Benio101/cpp-logo/master/cpp_logo.png"
+      },
+      {
+        "name": "TypeScript",
+        "image": "https://cdn.worldvectorlogo.com/logos/typescript-2.svg"
+      }
+    ],
+    "image": "https://res.cloudinary.com/brayhandeaza/image/upload/v1783600213/egibkropgj4kdis1subz.png",
+    "github": "https://github.com/corefound/yogi",
+    "notion": "https://brayhandeaza.notion.site/Netflix-4e2518cd26994b3b82b0648430e0294d",
+    "url": ""
+  },
+  {
     "id": "cromio",
     "name": "Cromio",
     "date": "Feb 02, 2024",
