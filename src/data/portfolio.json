@@ -14,9 +14,13 @@
       {
         "name": "TypeScript",
         "image": "https://cdn.worldvectorlogo.com/logos/typescript-2.svg"
+      },
+      {
+        "name": "LLVM",
+        "image": "https://llvm.org/img/LLVMWyvernBig.png"
       }
     ],
-    "image": "https://res.cloudinary.com/brayhandeaza/image/upload/v1783600213/egibkropgj4kdis1subz.png",
+    "image": "https://res.cloudinary.com/brayhandeaza/image/upload/v1783608968/ajjwsogn7tvfwxtzxrgx.png",
     "github": "https://github.com/corefound/yogi",
     "notion": "https://brayhandeaza.notion.site/Netflix-4e2518cd26994b3b82b0648430e0294d",
     "url": ""
@@ -58,6 +62,60 @@
     ],
     "image": "https://res.cloudinary.com/brayhandeaza/image/upload/v1783599549/s0toknfnt9pabahzb7me.png",
     "github": "https://github.com/brayhandeaza/byper",
+    "url": ""
+  },
+  {
+    "id": "binomia",
+    "name": "Binomia",
+    "date": "Feb 02, 2024",
+    "description": "A full-stack fintech mobile wallet and payment platform. Built with a microservices backend (Node.js + TypeScript), a React Native mobile client, and a C++ native addon for ML-based fraud detection.",
+    "featured": true,
+    "category": [{ "name": "front-end" }],
+    "technologies": [
+      {
+        "name": "TypeScript",
+        "image": "https://cdn.worldvectorlogo.com/logos/typescript-2.svg"
+      },
+      {
+        "name": "C++",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1280px-ISO_C%2B%2B_Logo.svg.png"
+      },
+      {
+        "name": "Kubernetes",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/960px-Kubernetes_logo_without_workmark.svg.png"
+      },
+      {
+        "name": "Docker",
+        "image": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png"
+      }
+    ],
+    "image": "https://res.cloudinary.com/brayhandeaza/image/upload/v1786107938/zdvibcm2gxq4ybjiomtn.png",
+    "github": "https://github.com/brayhandeaza/blockchain",
+    "url": ""
+  },
+  {
+    "id": "blockchain",
+    "name": "Blockchain",
+    "date": "Feb 02, 2024",
+    "description": "A Fully Implemented Blockchain that can transact and store data. It also includes a proof of stake algorithm and a simple transaction system.",
+    "featured": true,
+    "category": [{ "name": "front-end" }],
+    "technologies": [
+      {
+        "name": "TypeScript",
+        "image": "https://cdn.worldvectorlogo.com/logos/typescript-2.svg"
+      },
+      {
+        "name": "Kubernetes",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/960px-Kubernetes_logo_without_workmark.svg.png"
+      },
+      {
+        "name": "Docker",
+        "image": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png"
+      }
+    ],
+    "image": "https://evc.sa/wp-content/uploads/2023/05/Blockchain-1.webp",
+    "github": "https://github.com/brayhandeaza/blockchain",
     "url": ""
   }
 ]

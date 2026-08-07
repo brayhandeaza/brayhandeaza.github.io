@@ -11,14 +11,12 @@
     }
 
     .projects-grid {
-        display: flex;
-        gap: 28px;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 24px;
     }
 
     .project-card {
-        flex: 0 1 340px;
-        max-width: 400px;
         text-decoration: none;
         display: block;
         border-radius: 18px;
