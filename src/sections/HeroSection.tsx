@@ -40,6 +40,7 @@ const HeroSection: React.FC = () => {
                                             <p className="col-10 wow fadeInUp textGray" data-wow-delay=".8s">
                                                 I believe in the power of technology to transform lives and drive positive change, and I'm committed to leveraging my skills and experience to contribute to this vision. Whether you're a fellow developer, a potential collaborator, or simply curious about the world of software engineering, I invite you to connect with me and talk about this exciting journey.
                                             </p>
+                                            <Link className="support-home-link" to="/?support=monthly">Support my work</Link>
                                         </div>
                                     </div>
                                 </div>
